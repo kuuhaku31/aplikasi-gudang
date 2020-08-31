@@ -1,78 +1,78 @@
 <?php
 
-class Siswa extends Controller
+class Barang extends Controller
 {
     public function index()
     {
-        $data['judul'] = 'Daftar Siswa';
-        $data['students'] = $this->model('Siswa_model')->getAllSiswa();
+        $data['judul'] = 'Daftar Barang';
+        $data['barang'] = $this->model('Gudang_model')->getAllBarang();
 
         $this->view('templates/header', $data);
-        $this->view('siswa/index', $data);
+        $this->view('barang/index', $data);
         $this->view('templates/footer');
     }
 
     public function detail($id)
     {
-        $data['judul'] = 'Detail Siswa';
-        $data['students'] = $this->model('Siswa_model')->getSiswaById($id);
+        $data['judul'] = 'Detail barang';
+        $data['students'] = $this->model('Gudang_model')->getBarangById($id);
 
         $this->view('templates/header', $data);
-        $this->view('siswa/detail', $data);
+        $this->view('barang/detail', $data);
         $this->view('templates/footer');
     }
 
     public function tambah()
     {
-        if ($this->model('Siswa_model')->tambahDataSiswa($_POST) > 0) {
+        if ($this->model('Gudang_model')->tambahBarang($_POST) > 0) {
             Flasher::setFlash('berhasil', 'ditambahkan', 'success');
-            header('Location:' . BASEURL . '/siswa');
+            header('Location:' . BASEURL . '/barang');
             exit;
         } else {
             Flasher::setFlash('gagal', 'ditambahkan', 'danger');
-            header('Location:' . BASEURL . '/siswa');
+            header('Location:' . BASEURL . '/barang');
             exit;
         }
     }
 
     public function hapus($id)
     {
-        if ($this->model('Siswa_model')->hapusDataSiswa($id) > 0) {
+        if ($this->model('Gudang_model')->hapusBarang($id) > 0) {
             Flasher::setFlash('berhasil', 'dihapus', 'success');
-            header('Location:' . BASEURL . '/siswa');
+            header('Location:' . BASEURL . '/barang');
             exit;
         } else {
             Flasher::setFlash('gagal', 'dihapus', 'danger');
-            header('Location:' . BASEURL . '/siswa');
+            header('Location:' . BASEURL . '/barang');
             exit;
         }
     }
 
     public function getubah()
     {
-        echo json_encode($this->model('Siswa_model')->getSiswaById($_POST['id']));
+        echo json_encode($this->model('Gudang_model')->getBarangById($_POST['id']));
     }
 
     public function ubah()
     {
-        if ($this->model('Siswa_model')->ubahDataSiswa($_POST) > 0) {
+        if ($this->model('Gudang_model')->ubahBarang($_POST) > 0) {
             Flasher::setFlash('berhasil', 'diubah', 'success');
-            header('Location:' . BASEURL . '/siswa');
+            header('Location:' . BASEURL . '/barang');
             exit;
         } else {
             Flasher::setFlash('gagal', 'diubah', 'danger');
-            header('Location:' . BASEURL . '/siswa');
+            header('Location:' . BASEURL . '/barang');
             exit;
         }
     }
 
     public function cari()
     {
-        $data['judul'] = 'Daftar Siswa';
-        $data['students'] = $this->model('Siswa_model')->cariSiswa();
+        $data['judul'] = 'Daftar barang';
+        $data['students'] = $this->model('Gudang_model')->cariBarang();
 
         $this->view('templates/header', $data);
-        $this->view('siswa/index', $data);
+        $this->view('barang/index', $data);
         $this->view('templates/footer');
     }
 }
