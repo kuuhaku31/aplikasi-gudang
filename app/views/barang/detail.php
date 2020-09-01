@@ -2,11 +2,13 @@
 
     <!-- Portfolio Item Heading -->
     <div class="row mt-1">
-        <div class="col-xs-1 align-left">
+        <div class="col-xs-1 mr-3" style="margin-top: 34px;">
             <a href="<?= BASEURL; ?>/barang">
                 <i class="fa fa-arrow-circle-left fa-2x"></i>
             </a>
-            <h1 class="my-4 float-right ml-3"><?= $data['title']; ?>
+        </div>
+        <div class="col-xs-12">
+            <h1 class="my-4"><?= $data['title']; ?>
                 <small><?= $data['barang']['nama_barang']; ?></small>
             </h1>
         </div>
@@ -22,12 +24,13 @@
         <div class="col-md-4">
             <h3 class="my-3">Deskripsi Produk</h3>
             <p><?= $data['barang']['deskripsi']; ?></p>
-            <h3 class="my-3">Project Details</h3>
             <ul>
-                <li>Lorem Ipsum</li>
-                <li>Dolor Sit Amet</li>
-                <li>Consectetur</li>
-                <li>Adipiscing Elit</li>
+                <li>Harga satuan : Rp. <?= $data['barang']['harga']; ?></li>
+                <li>Stok barang : <?= $data['barang']['stok']; ?> buah</li>
+                <li>Tanggal masuk : <?= $data['barang']['tan_masuk']; ?></li>
+                <li>
+                    Tanggal keluar : <?= ($data['barang']['status'] == 'di_gudang') ? 'Masih di Gudang' : 'Sudah dikeluarkan'; ?>
+                </li>
             </ul>
         </div>
 

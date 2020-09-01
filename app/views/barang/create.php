@@ -1,5 +1,14 @@
 <div class="container mt-4">
-    <h3><?= $data['title']; ?></h3>
+    <div class="row mt-1">
+        <div class="col-xs-1 mr-3" style="margin-top: 28px;">
+            <a href="<?= BASEURL; ?>/barang">
+                <i class="fa fa-arrow-circle-left fa-2x"></i>
+            </a>
+        </div>
+        <div class="col-xs-12">
+            <h3 class="my-4"><?= $data['title']; ?></h3>
+        </div>
+    </div>
 
     <div class="col-6 mt-3">
         <form method="POST" action="<?= BASEURL; ?>barang/tambah">
