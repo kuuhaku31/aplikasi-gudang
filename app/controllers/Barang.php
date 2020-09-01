@@ -22,6 +22,16 @@ class Barang extends Controller
         $this->view('templates/footer');
     }
 
+    public function create()
+    {
+        $data['judul'] = 'Buat data baru';
+        $data['title'] = 'Tambahkan data barang baru';
+
+        $this->view('templates/header', $data);
+        $this->view('barang/create', $data);
+        $this->view('templates/footer');
+    }
+
     public function tambah()
     {
         if ($this->model('Gudang_model')->tambahBarang($_POST) > 0) {

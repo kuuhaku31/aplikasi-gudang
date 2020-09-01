@@ -27,10 +27,11 @@ class Gudang_model
     {
         $query = "INSERT INTO barang
                     VALUES
-                    ('', :nama_barang, :stok, :tan_masuk, :tan_keluar, :lok_gudang, :ekspedisi, :kategori)";
+                    ('', :nama_barang,:deskripsi , :stok, :tan_masuk, :tan_keluar, :lok_gudang, :ekspedisi, :kategori)";
 
         $this->db->query($query);
         $this->db->bind('nama_barang', htmlspecialchars($data['nama_barang']));
+        $this->db->bind('deskripsi', htmlspecialchars($data['deskripsi']));
         $this->db->bind('stok', htmlspecialchars($data['stok']));
         $this->db->bind('tan_masuk', htmlspecialchars($data['tan_masuk']));
         $this->db->bind('tan_keluar', htmlspecialchars($data['tan_keluar']));

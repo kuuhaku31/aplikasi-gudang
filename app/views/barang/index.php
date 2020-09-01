@@ -22,8 +22,8 @@
             | dan list dari nama barang yang sudah ada di database 
             -->
 
-            <div class="header">
-                <a href="" class="float-right">
+            <div class="align-text-top">
+                <a href="<?= BASEURL; ?>barang/create" class="float-right">
                     <i class="fa fa-plus-circle fa-2x"></i>
                 </a>
                 <h3>Daftar Barang</h3>
@@ -52,10 +52,10 @@
                     foreach ($data['barang'] as $barang) :
                     ?>
                         <tr>
-                            <td>
+                            <td class="align-middle">
                                 <?= $num++; ?>
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 <!-- 
                                 | bagian ini berisi nama barang dan hanya di tulis sekali saja
                                 | karena bagian ini ada di dalam tag perulangan php yaitu
@@ -67,13 +67,13 @@
                                 <!-- =========================================================================== -->
 
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 <?= $barang['stok']; ?> Buah
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 <?= $barang['tan_masuk']; ?>
                             </td>
-                            <td>
+                            <td class="align-middle">
                                 <!-- detail data barang -->
                                 <a href=" <?= BASEURL; ?>/siswa/detail/<?= $barang['id']; ?>" class="btn btn-sm btn-primary">
                                     detail
