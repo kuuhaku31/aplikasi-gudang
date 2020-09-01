@@ -15,7 +15,8 @@ class Barang extends Controller
     public function detail($id)
     {
         $data['judul'] = 'Detail barang';
-        $data['students'] = $this->model('Gudang_model')->getBarangById($id);
+        $data['title'] = 'Detail barang';
+        $data['barang'] = $this->model('Gudang_model')->getBarangById($id);
 
         $this->view('templates/header', $data);
         $this->view('barang/detail', $data);

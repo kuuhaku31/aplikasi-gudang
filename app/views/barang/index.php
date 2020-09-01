@@ -43,6 +43,7 @@
                         <th>Nama Barang</th>
                         <th>Stok Gudang</th>
                         <th>Tanggal Masuk</th>
+                        <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -74,8 +75,11 @@
                                 <?= $barang['tan_masuk']; ?>
                             </td>
                             <td class="align-middle">
+                                <?= ($barang['status'] == 'di_gudang') ? 'Di gudang' : 'keluar'; ?>
+                            </td>
+                            <td class="align-middle">
                                 <!-- detail data barang -->
-                                <a href=" <?= BASEURL; ?>/siswa/detail/<?= $barang['id']; ?>" class="btn btn-sm btn-primary">
+                                <a href=" <?= BASEURL; ?>barang/detail/<?= $barang['id']; ?>" class="btn btn-sm btn-primary">
                                     detail
                                 </a>
                             </td>

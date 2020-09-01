@@ -5,6 +5,7 @@
     <title><?= $data['judul']; ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="<?= BASEURL; ?>/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= BASEURL; ?>/css/style.css">
 </head>
 
 <body>
@@ -17,8 +18,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="<?= BASEURL; ?>">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="<?= BASEURL; ?>/about">About</a>
-                    <a class="nav-item nav-link" href="<?= BASEURL; ?>/barang">Barang</a>
+                    <a class="nav-item nav-link" href="<?= BASEURL; ?>about">About</a>
+                    <a class="nav-item nav-link" href="<?= BASEURL; ?>barang">Barang</a>
                 </div>
             </div>
             <form action="<?= BASEURL; ?>/siswa/cari/" method="POST" class="form-inline my-2 my-lg-0">
