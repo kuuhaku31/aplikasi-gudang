@@ -27,7 +27,7 @@ class Gudang_model
     {
         $query = "INSERT INTO barang
                     VALUES
-                    ('', :nama_barang,:deskripsi , :stok, :tan_masuk, :tan_keluar, :lok_gudang, :ekspedisi, :kategori, :pic)";
+                    ('', :nama_barang, :deskripsi , :stok, :tan_masuk, :tan_keluar, :lok_gudang, :ekspedisi, :kategori, :pic)";
 
         $this->db->query($query);
         $this->db->bind('nama_barang', htmlspecialchars($data['nama_barang']));

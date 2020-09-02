@@ -1,3 +1,8 @@
+body,
+.background,
+.content-wrapper {
+	background-color: #777;
+}
 .row .img img {
 	width: 400px;
 	height: 400px;

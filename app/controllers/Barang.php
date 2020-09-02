@@ -8,6 +8,8 @@ class Barang extends Controller
         $data['barang'] = $this->model('Gudang_model')->getAllBarang();
 
         $this->view('templates/header', $data);
+        $this->view('templates/navbar', $data);
+        $this->view('templates/sidebar', $data);
         $this->view('barang/index', $data);
         $this->view('templates/footer');
     }
@@ -19,6 +21,8 @@ class Barang extends Controller
         $data['barang'] = $this->model('Gudang_model')->getBarangById($id);
 
         $this->view('templates/header', $data);
+        $this->view('templates/navbar', $data);
+        $this->view('templates/sidebar', $data);
         $this->view('barang/detail', $data);
         $this->view('templates/footer');
     }
@@ -29,6 +33,8 @@ class Barang extends Controller
         $data['title'] = 'Tambahkan data barang baru';
 
         $this->view('templates/header', $data);
+        $this->view('templates/navbar', $data);
+        $this->view('templates/sidebar', $data);
         $this->view('barang/create', $data);
         $this->view('templates/footer');
     }
@@ -83,6 +89,8 @@ class Barang extends Controller
         $data['students'] = $this->model('Gudang_model')->cariBarang();
 
         $this->view('templates/header', $data);
+        $this->view('templates/navbar', $data);
+        $this->view('templates/sidebar', $data);
         $this->view('barang/index', $data);
         $this->view('templates/footer');
     }
