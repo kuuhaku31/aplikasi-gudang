@@ -83,7 +83,11 @@
                                         <a href=" <?= BASEURL; ?>barang/detail/<?= $barang['id']; ?>" class="btn btn-sm btn-primary">
                                             detail
                                         </a>
-                                        <a href="siswa/hapus"></a>
+                                        <button class="btn btn-danger btn-sm">
+                                            <a href="<?= BASEURL; ?>siswa/hapus/<?= $barang['id']; ?>" style="text-decoration: none; color: #fff;">
+                                                <i class="fa fa-trash-alt"></i>
+                                            </a>
+                                        </button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
